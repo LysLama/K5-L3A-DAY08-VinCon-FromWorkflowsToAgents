@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
+|   1 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | xtraiter |         |
 |   2 |        |      |       |        |         |
 |   3 |        |      |       |        |         |
 |   4 |        |      |       |        |         |
