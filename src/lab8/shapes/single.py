@@ -58,11 +58,41 @@ def run_claim(
     store_path: str,
     crash_at: str | None = None,
 ) -> RunResult:
-    conn = connect(store_path)
     try:
-        return _run(conn, claim_id, seed=seed, crash_at=crash_at)
-    finally:
-        conn.close()
+        conn = connect(store_path)
+        try:
+            return _run(conn, claim_id, seed=seed, crash_at=crash_at)
+        finally:
+            conn.close()
+    except InjectedCrash:
+        raise
+    except Exception as exc:  # noqa: BLE001 — run_claim must not raise (docs/contracts.md)
+        return _internal_failure(claim_id, seed, exc)
+
+
+def _internal_failure(claim_id: str, seed: int, exc: Exception) -> RunResult:
+    """An unusable store or an unexpected error ends as `failed` with a valid trace, not an exception."""
+    run_id = make_run_id("single", claim_id, seed)
+    trace = _Trace(run_id)
+    # Only the exception type is traced: the message could carry row data.
+    trace.add("error", {"reason": "internal_error", "type": type(exc).__name__})
+    return RunResult(
+        run_id=run_id,
+        claim_id=claim_id,
+        shape="single",
+        seed=seed,
+        status="failed",
+        proposal_amount=0,
+        refund_effects=[],
+        committed_audit_count=0,
+        model_calls=0,
+        tool_calls=0,
+        input_tokens=0,
+        output_tokens=0,
+        cost_estimate=0.0,
+        trace_path=trace.write(),
+        error_reason=f"internal:{type(exc).__name__}",
+    )
 
 
 def _run(
