@@ -112,5 +112,5 @@ Shape C trên bộ public, 14 claim × 5 seed (`11,22,33,44,55`), lấy từ l�
 ### Tự nhận xét
 
 - Phần tôi hiểu rõ nhất: Tôi hiểu rõ nhất ranh giới giữa code và model trong shape C. Model chỉ lập kế hoạch và soạn câu trả lời, còn số tiền do compute_compensation tính và chỉ orchestrator được gọi issue_refund. Tôi cũng hiểu vì sao phải truyền quote đầy đủ: host tự trừ phần đơn đã được hoàn trong chính transaction ghi, nên nếu shape trừ trước thì T14 bị trừ hai lần, ra 90.000 thay vì 120.000.
-- Phần tôi chưa chắc, cần học thêm: Tôi chưa nắm chắc cơ chế idempotency bên trong durability.issue_refund, nhất là đoạn BEGIN IMMEDIATE đọc lại tổng đã hoàn và cách xử lý IntegrityError khi retry. Tôi mới dùng nó như một hộp đen và kiểm bằng test crash. Tôi cũng cần học thêm cách thiết kế handoff khi investigator là model thật, vì trong lab investigator chạy trên MockLLM nên chưa thấy được rủi ro model làm sai.
+- Phần tôi chưa chắc, cần học thêm: Tôi cần học thêm cách thiết kế handoff khi investigator là model thật, vì trong lab investigator chạy trên MockLLM nên chưa thấy được rủi ro model làm sai.
 - Mức hoàn thành tôi tự chấm: Tôi tự chấm khoảng 8/10 cho phần việc được giao. Shape C và test đã xong và qua hết kiểm tra, code ba shape đã gộp lên main. Tôi đã chạy tự kiểm trên student_drop/.
