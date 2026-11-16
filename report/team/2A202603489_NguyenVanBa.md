@@ -63,9 +63,10 @@ Chạy trong `src/`, trên code đã gộp với workflow và single của nhóm
 | `python -m pytest -q tests/test_orchestrator_handoff.py` | 34 passed |
 | `python -m pytest -q tests/test_run_claim_never_raises.py` | 9 passed |
 | `python -m pytest -q -m student -o addopts= -k orchestrator` | 62 passed |
-| `python -m pytest -q` (cổng host) | 101 passed |
+| `python -m pytest -q` (cổng host) | 135 passed (101 tại commit `955d5c4`, trước khi nhóm thêm test đánh giá và bonus) |
 | `python -m pytest -q -m student -o addopts=` (4 shape) | 248 passed |
 | `python -m lab8.crash_test --count 20 --out reports/crash.json` | `crash_safety 20/20` |
+| Tự kiểm trên `student_drop/` → `src/reports/hidden_selfcheck.json` | 600 trial (3 shape × 40 claim × 5 seed): 0 `error`, 0 `leak_suspect`, trace đúng contract |
 
 Shape C trên bộ public, 14 claim × 5 seed (`11,22,33,44,55`), lấy từ lệnh benchmark trong `src/reports/README.md`:
 
@@ -94,4 +95,22 @@ Shape C trên bộ public, 14 claim × 5 seed (`11,22,33,44,55`), lấy từ l�
 
 ## 6. Tự đánh giá
 
-...
+### Đã hoàn thành
+
+- Shape C qua 62/62 test student và pass 1.000 trên bộ public ở cả 5 seed.
+- Crash ở cả ba điểm rồi resume đều chỉ ra một refund và một audit `refund_committed`.
+- Thêm 43 test (34 cho shape C, 9 cho contract "không ném exception" trên cả ba shape).
+- Gộp code ba shape lên `main`; sau khi gộp cổng host 101 passed, ma trận student 248 passed.
+
+### Hạn chế
+
+- Phần lớn code và test do Claude Code soạn theo yêu cầu của tôi (mục 5). Phần của tôi là giao việc, quyết định phạm vi, gộp code với nhóm và push.
+- Kiểm có nhãn mới chỉ trên 14 claim public và 10 ca đối kháng tự viết. Tự kiểm trên `student_drop/` (40 claim × 5 seed) không có trial lỗi hay nghi lộ secret, nhưng gói này không có nhãn nên chưa biết pass rate trên bộ hidden.
+- Shape C tốn chi phí cao nhất trong ba shape nhóm viết (54.65 VND/success, so với 28.79 của workflow và 39.08 của single) mà pass rate không cao hơn. Với bài toán này, thêm investigator chưa đổi được gì ngoài chi phí.
+- Investigator và bước lập kế hoạch chạy trên MockLLM nên không thật sự suy luận; kết quả chưa nói được gì về một model thật.
+
+### Tự nhận xét
+
+- Phần tôi hiểu rõ nhất: Tôi hiểu rõ nhất ranh giới giữa code và model trong shape C. Model chỉ lập kế hoạch và soạn câu trả lời, còn số tiền do compute_compensation tính và chỉ orchestrator được gọi issue_refund. Tôi cũng hiểu vì sao phải truyền quote đầy đủ: host tự trừ phần đơn đã được hoàn trong chính transaction ghi, nên nếu shape trừ trước thì T14 bị trừ hai lần, ra 90.000 thay vì 120.000.
+- Phần tôi chưa chắc, cần học thêm: Tôi chưa nắm chắc cơ chế idempotency bên trong durability.issue_refund, nhất là đoạn BEGIN IMMEDIATE đọc lại tổng đã hoàn và cách xử lý IntegrityError khi retry. Tôi mới dùng nó như một hộp đen và kiểm bằng test crash. Tôi cũng cần học thêm cách thiết kế handoff khi investigator là model thật, vì trong lab investigator chạy trên MockLLM nên chưa thấy được rủi ro model làm sai.
+- Mức hoàn thành tôi tự chấm: Tôi tự chấm khoảng 8/10 cho phần việc được giao. Shape C và test đã xong và qua hết kiểm tra, code ba shape đã gộp lên main. Tôi đã chạy tự kiểm trên student_drop/.

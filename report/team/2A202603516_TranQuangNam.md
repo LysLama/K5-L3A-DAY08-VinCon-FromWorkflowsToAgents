@@ -32,7 +32,7 @@
 - **File unit test đóng góp**: `src/tests/test_single_agent.py` (4/4 tests passed)
 - **Kết quả ma trận test student cho Shape B**: 62/62 tests passed trên 14 claims T01–T14 với đủ 5 seeds (`11, 22, 33, 44, 55`).
   - Lệnh kiểm tra: `python -m pytest -q -m student -o addopts= -k "single and not workflow and not orchestrator and not swarm"`
-- **Cổng Host (`pytest -q`)**: 58/58 tests passed (tăng 4 tests so với starter gốc).
+- **Cổng Host (`pytest -q`)**: 58/58 tests passed tại commit `451e3fa` (tăng 4 tests so với starter gốc); trên `main` sau khi cả nhóm gộp test là 135 passed.
 - **Crash Test**: Đạt 20/20 điểm (`src/reports/crash.json`).
 - **Trace log**: Đáp ứng đúng chuẩn Trace contract v1, không có cảnh báo vi phạm `CANARY_SECRET_*` hay rò rỉ PII.
 

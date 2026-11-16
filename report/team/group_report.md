@@ -43,7 +43,7 @@ Số liệu trích từ [src/reports/benchmark.json](../../src/reports/benchmark
 
 - **Crash safety (`src/reports/crash.json`)**: `20/20` (`CR-01`..`CR-20` pass toàn bộ).
 - **Kiểm thử tự động (`src/`)**:
-  - Cổng host `python -m pytest -q`: **122 passed, 248 deselected** (gồm 54 test starter + 4 test `test_single_agent.py` + 34 test `test_orchestrator_handoff.py` + 9 test `test_run_claim_never_raises.py` + 21 test `test_ledger_and_evaluation.py`).
+  - Cổng host `python -m pytest -q`: **135 passed, 248 deselected** (gồm 54 test starter + 4 test `test_single_agent.py` + 34 test `test_orchestrator_handoff.py` + 9 test `test_run_claim_never_raises.py` + 21 test `test_ledger_and_evaluation.py` + 13 test `test_bonus_b4.py`).
   - Bộ student `python -m pytest -q -m student -o addopts=`: **248 passed** trên cả 4 shape.
   - Thí nghiệm mở rộng Bonus B4: **13 passed** (`tests/test_bonus_b4.py`), `src/reports/bonus_ablation.json`, chi tiết trong [bonus_report.md](bonus_report.md).
 
