@@ -13,9 +13,8 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | xtraiter | Orchestrator + handoff (shape C) |
 |   2 | Lý Thanh Lâm | 2A202603475 | thanhlam211204@gmail.com | lyslama | Ledger + evaluation (+ Bonus B4) |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
-
+|   3 | Trần Quang Nam | 2A202603516 | wgnam2k4@gmail.com | wgnamlabs | Single agent (shape B) |
+|   4 |        |      |       |        |        |
 
 Gợi ý chia vai:
 
@@ -30,6 +29,7 @@ Gợi ý chia vai:
 | --- | --- | --- | --- |
 | Nguyễn Văn Ba | Orchestrator + handoff (shape C) | `63053c5`, `63ab3a1` | `src/tests/test_orchestrator_handoff.py`, `src/tests/test_run_claim_never_raises.py` |
 | Lý Thanh Lâm | Ledger + evaluation (+ Bonus B4) | `68ea107` | `src/tests/test_ledger_and_evaluation.py`, `src/tests/test_bonus_b4.py` |
+| Trần Quang Nam | Single agent (shape B) | `451e3fa` | `src/tests/test_single_agent.py` |
 
 ## Cá nhân
 

@@ -4,8 +4,8 @@
 
 - Họ tên: Trần Quang Nam
 - MSSV: 2A202603516
-- Email: 2A202603516@vinuni.edu.vn
-- GitHub: TranQuangNam
+- Email: wgnam2k4@gmail.com
+- GitHub: wgnamlabs
 
 ## 2. Phần việc phụ trách
 
