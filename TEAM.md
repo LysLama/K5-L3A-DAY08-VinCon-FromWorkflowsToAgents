@@ -51,7 +51,7 @@ Sao chép mục dưới đây cho từng thành viên.
 - Shape A — deterministic workflow (`src/lab8/shapes/workflow.py`)
 - Integration: chữ ký `run_claim`, `finish` / trace mọi nhánh, full quote + `crash_at`
 - Báo cáo cá nhân: `report/team/2A202603479_PhamTrungKien.md`
-- Tài liệu giải thích: `docs/huong_dan_workflow.md`
+- Tài liệu giải thích: `docs/huong_dan_workflow.md` (không nằm trong repo nộp)
 
 ### Đóng góp cụ thể
 

@@ -43,6 +43,7 @@
 - Lệnh đã chạy và kết quả (trong `src/` với `.venv` Python `3.13.14`):
   - `python -m pytest -q` → **135 passed, 248 deselected** (gồm cả 21 test ledger/eval và 13 test bonus B4)
   - `python -m pytest -q -m student -o addopts=` → **248 passed, 135 deselected**
+  - Hai dòng trên là số tại commit `68ea107`. Trên `main` hiện tại cổng host là **140 passed** vì có thêm 5 test `test_workflow_shape.py`.
   - `python -m lab8.check_submission` → **0 FAIL, 0 WARN**
 
 ## 5. Công cụ AI đã dùng

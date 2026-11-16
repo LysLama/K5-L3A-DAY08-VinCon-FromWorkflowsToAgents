@@ -5,14 +5,14 @@
 - Họ tên: Phạm Trung Kiên
 - MSSV: 2A202603479
 - Email: trungkienpham0607@gmail.com
-- GitHub: LysLama
+- GitHub: kienpham0607
 
 ## 2. Phần việc phụ trách
 
 - Phụ trách chính **Shape A — deterministic workflow** (`src/lab8/shapes/workflow.py`).
 - Viết pipeline cố định: đọc claim → tra đơn theo quyền → tính quote từ order DB → gọi host ghi refund khi cần.
 - Đảm bảo ranh giới **code quyết tiền / MockLLM chỉ soạn chữ**; truyền **quote đầy đủ** và `crash_at` vào `durability.issue_refund`.
-- Tài liệu giải thích nội bộ: `docs/huong_dan_workflow.md`.
+- Tài liệu giải thích nội bộ: `docs/huong_dan_workflow.md` (không nằm trong repo nộp).
 - Shape B (single) và shape C (orchestrator), benchmark/ADR/báo cáo nhóm do thành viên khác phụ trách.
 
 ## 3. Đóng góp cụ thể
@@ -71,7 +71,7 @@ Chạy trong thư mục `src/`:
 - **Dùng vào việc gì:**
   - Đọc đề (`CHECKPOINTS.md`, `docs/business_rules.md`, `docs/contracts.md`) và mẫu `swarm_reference.py`.
   - Viết / hoàn thiện `workflow.py` theo docstring CP2–CP3.
-  - Soạn `docs/huong_dan_workflow.md` và bản nháp báo cáo cá nhân này.
+  - Soạn `docs/huong_dan_workflow.md` (không nằm trong repo nộp) và bản nháp báo cáo cá nhân này.
 - **Cách tự kiểm tra kết quả:**
   - Chạy smoke + `pytest -m student -k workflow` trên máy cá nhân, đối chiếu status/proposal với luật nghiệp vụ.
   - Không dùng AI để bịa số liệu benchmark, run id hay commit.

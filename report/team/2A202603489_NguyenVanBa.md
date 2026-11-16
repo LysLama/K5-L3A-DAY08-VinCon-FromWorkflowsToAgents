@@ -63,7 +63,7 @@ Chạy trong `src/`, trên code đã gộp với workflow và single của nhóm
 | `python -m pytest -q tests/test_orchestrator_handoff.py` | 34 passed |
 | `python -m pytest -q tests/test_run_claim_never_raises.py` | 9 passed |
 | `python -m pytest -q -m student -o addopts= -k orchestrator` | 62 passed |
-| `python -m pytest -q` (cổng host) | 135 passed (101 tại commit `955d5c4`, trước khi nhóm thêm test đánh giá và bonus) |
+| `python -m pytest -q` (cổng host) | 140 passed (101 tại commit `955d5c4`, trước khi nhóm thêm test đánh giá, bonus và workflow) |
 | `python -m pytest -q -m student -o addopts=` (4 shape) | 248 passed |
 | `python -m lab8.crash_test --count 20 --out reports/crash.json` | `crash_safety 20/20` |
 | Tự kiểm trên `student_drop/` → `src/reports/hidden_selfcheck.json` | 600 trial (3 shape × 40 claim × 5 seed): 0 `error`, 0 `leak_suspect`, trace đúng contract |
