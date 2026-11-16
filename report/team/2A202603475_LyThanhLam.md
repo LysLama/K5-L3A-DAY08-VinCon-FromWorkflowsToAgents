@@ -9,7 +9,7 @@
 
 ## 2. Phần việc phụ trách
 
-- Phụ trách mảng **Ledger + Evaluation** cho nhóm **VIncon** (nhánh 4 người):
+- Phụ trách mảng **Ledger + Evaluation** cho nhóm **VinCon** (nhánh 4 người):
   - Kiểm định ranh giới `durability.issue_refund`, `policy.authorize`, trần hoàn tiền theo đơn (`cap_per_order`), idempotency, conflict, bảo mật trace khi crash, và vệ sinh đóng handle SQLite trên Windows.
   - Chạy toàn bộ quy trình đánh giá định lượng (`lab8.crash_test`, `lab8.benchmark`, `lab8.check_submission`).
   - Phụ trách hoàn thiện **ADR** ([decision_adr.md](decision_adr.md)), **Research Card** ([research_card.md](research_card.md)) và tổng hợp phần Kết quả / Hạn chế trong **Group Report** ([group_report.md](group_report.md)).

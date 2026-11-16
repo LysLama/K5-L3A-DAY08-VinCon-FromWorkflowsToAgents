@@ -2,10 +2,10 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm: VIncon
+- Tên nhóm: VinCon
 - Lớp: L3A
-- Repo nhóm: `K5-L3A-DAY08-VinCon-FromWorkflowstoAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: `https://github.com/LysLama/K5-L3A-DAY08-VinCon-FromWorkflowstoAgents` · nhánh `main` · `68ea107`
+- Repo nhóm: `K5-L3A-DAY08-VinCon-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo, nhánh nộp, commit chốt: `https://github.com/LysLama/K5-L3A-DAY08-VinCon-FromWorkflowsToAgents` · nhánh `main` · `68ea107`
 
 ## Thành viên
 
