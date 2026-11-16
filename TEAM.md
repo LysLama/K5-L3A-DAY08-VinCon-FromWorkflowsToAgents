@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | xtraiter |         |
+|   1 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | xtraiter | Orchestrator + handoff (shape C) |
 |   2 |        |      |       |        |         |
 |   3 |        |      |       |        |         |
 |   4 |        |      |       |        |         |
@@ -28,7 +28,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| Nguyễn Văn Ba | Orchestrator + handoff (shape C) | `63053c5`, `63ab3a1` | `src/tests/test_orchestrator_handoff.py`, `src/tests/test_run_claim_never_raises.py` |
 
 ## Cá nhân
 
